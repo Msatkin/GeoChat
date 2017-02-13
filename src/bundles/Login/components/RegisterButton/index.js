@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react'
-import { TouchableHighlight, Text } from 'react-native'
+import { View, Button } from 'react-native'
 import styles from './styles'
 
 type Props = {
@@ -10,12 +10,14 @@ type Props = {
 
 const SubmitButton = (props: Props): React$Element<any> => {
   return (
-    <TouchableHighlight
-        style={styles.button}
-        underlayColor={'#328FE6'}
-        onPress={() => console.log('pressed')}>
-        <Text style={styles.text}>Register</Text>
-    </TouchableHighlight>
+    <View style={styles.button}>
+      <Button
+        onPress={() => console.log('pressed')}
+        title="Register"
+        color="#328FE6"
+        accessibilityLabel="Learn more about this purple button"
+      />
+    </View>
   )
 }
 

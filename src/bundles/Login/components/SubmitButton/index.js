@@ -1,21 +1,19 @@
 /* @flow */
 
-import React from 'react'
-import { TouchableHighlight, Text } from 'react-native'
-import styles from './styles'
-
-type Props = {
-
-}
+import React from 'react';
+import { Button, View } from 'react-native';
+import styles from './styles';
 
 const SubmitButton = (props: Props): React$Element<any> => {
   return (
-    <TouchableHighlight
-        style={styles.button}
-        underlayColor={'#328FE6'}
-        onPress={() => console.log('pressed')}>
-        <Text style={styles.text}>Login</Text>
-    </TouchableHighlight>
+    <View style={styles.button}>
+      <Button
+        onPress={() => console.log('pressed')}
+        title="Login"
+        color="#328FE6"
+        accessibilityLabel="Learn more about this purple button"
+      />
+    </View>
   )
 }
 

@@ -8,6 +8,8 @@ import SubmitButton from '@Login/components/SubmitButton';
 import RegisterButton from '@Login/components/RegisterButton';
 import ForgotPasswordButton from '@Login/components/ForgotPasswordButton';
 import connect from './connect';
+import styles from './styles';
+import Title from '@components/Title'
 
 type Props = {
   login: {
@@ -25,18 +27,30 @@ class LoginContainer extends Component {
   render() {
     console.log(this.props);
     return (
-      <View>
-        <UsernameInput
-          changeUsername={this.props.changeUsername}
-          value={this.props.login.username}
-        />
-        <PasswordInput
-          changePassword={this.props.changePassword}
-          value={this.props.login.password}
-        />
-        <SubmitButton/>
-        <RegisterButton/>
-        <ForgotPasswordButton/>
+      <View style={styles.main}>
+
+        <View style={styles.top}>
+
+        </View>
+
+        <View style={styles.center}>
+          <Title>GeoChat</Title>
+          <UsernameInput
+            changeUsername={this.props.changeUsername}
+            value={this.props.login.username}
+          />
+          <PasswordInput
+            changePassword={this.props.changePassword}
+            value={this.props.login.password}
+          />
+          <SubmitButton/>
+        </View>
+
+        <View style={styles.bottom}>
+          <RegisterButton/>
+          <ForgotPasswordButton/>
+        </View>
+        
       </View>
     );
   }

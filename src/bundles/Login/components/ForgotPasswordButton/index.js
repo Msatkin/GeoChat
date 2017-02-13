@@ -8,7 +8,7 @@ type Props = {
 
 }
 
-const SubmitButton = (props: Props): React$Element<any> => {
+const ForgotPasswordButton = (props: Props): React$Element<any> => {
   return (
     <View style={styles.button}>
       <Button
@@ -21,4 +21,4 @@ const SubmitButton = (props: Props): React$Element<any> => {
   )
 }
 
-export default SubmitButton
+export default ForgotPasswordButton

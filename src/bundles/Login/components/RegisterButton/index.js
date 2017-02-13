@@ -1,24 +1,25 @@
 /* @flow */
 
-import React from 'react'
-import { View, Button } from 'react-native'
-import styles from './styles'
+import React from 'react';
+import { View, Button } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+import styles from './styles';
 
 type Props = {
 
 }
 
-const SubmitButton = (props: Props): React$Element<any> => {
+const RegisterButton = (props: Props): React$Element<any> => {
   return (
     <View style={styles.button}>
       <Button
-        onPress={() => console.log('pressed')}
+        onPress={Actions.register}
         title="Register"
         color="#328FE6"
-        accessibilityLabel="Learn more about this purple button"
+        accessibilityLabel="Click to register"
       />
     </View>
   )
 }
 
-export default SubmitButton
+export default RegisterButton

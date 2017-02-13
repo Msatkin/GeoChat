@@ -1,24 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+/* @flow */
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import App from './app/index';
+import { AppRegistry } from 'react-native'
+import Kernel from '@core'
 
-export default class GeoChat extends Component {
-  render() {
-    return (
-      <App/>
-    );
-  }
-}
-
-AppRegistry.registerComponent('GeoChat', () => GeoChat);
+AppRegistry.registerComponent('App', () => Kernel)

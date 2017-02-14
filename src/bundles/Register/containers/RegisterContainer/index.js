@@ -40,19 +40,19 @@ class RegisterContainer extends Component {
         <View style={styles.center}>
           <EmailInput
             update={this.props.changeEmail}
-            value={this.props.login.email}
+            value={this.props.register.email}
           />
           <UsernameInput
             update={this.props.changeUsername}
-            value={this.props.login.username}
+            value={this.props.register.username}
           />
           <PasswordInput
             update={this.props.changePassword}
-            value={this.props.login.password}
+            value={this.props.register.password}
           />
           <ConfirmPasswordInput
             update={this.props.changeConfirmPassword}
-            value={this.props.login.confirmPassword}
+            value={this.props.register.confirmPassword}
           />
           <SubmitButton/>
         </View>

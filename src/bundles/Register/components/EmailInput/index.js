@@ -17,7 +17,7 @@ const EmailInput = (props: Props): React$Element<any> => {
         style={styles.input}
         value={value}
         onChangeText={(text) => update(text)}
-        placeholder={'Enter Username'}
+        placeholder={'Enter Email'}
         maxLength={18}
         multiline={false}
     />

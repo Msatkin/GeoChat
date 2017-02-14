@@ -31,29 +31,35 @@ class LoginContainer extends Component {
   render() {
     return (
       <View style={styles.main}>
-
-        <View style={styles.top}>
-
-        </View>
+        <View style={styles.left}></View>
 
         <View style={styles.center}>
-          <Title>GeoChat</Title>
-          <UsernameInput
-            update={this.props.changeUsername}
-            value={this.props.login.username}
-          />
-          <PasswordInput
-            update={this.props.changePassword}
-            value={this.props.login.password}
-          />
-          <SubmitButton/>
-        </View>
+          <View style={styles.main_center}>
+            <View style={styles.top}></View>
 
-        <View style={styles.bottom}>
-          <RegisterButton/>
-          <ForgotPasswordButton/>
+
+            <View style={styles.center}>
+              <Title>GeoChat</Title>
+              <UsernameInput
+                update={this.props.changeUsername}
+                value={this.props.login.username}
+              />
+              <PasswordInput
+                update={this.props.changePassword}
+                value={this.props.login.password}
+              />
+              <SubmitButton/>
+            </View>
+
+
+            <View style={styles.bottom}>
+              <RegisterButton/>
+              <ForgotPasswordButton/>
+            </View>
+          </View>
         </View>
         
+        <View style={styles.right}></View>
       </View>
     );
   }

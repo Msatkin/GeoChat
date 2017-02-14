@@ -18,7 +18,7 @@ const ConfirmPasswordInput = (props: Props): React$Element<any> => {
         value={value}
         secureTextEntry={true}
         onChangeText={(text) => update(text)}
-        placeholder={'Enter Password'}
+        placeholder={'Confirm Password'}
         maxLength={24}
         multiline={false}
     />

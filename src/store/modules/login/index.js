@@ -1,14 +1,15 @@
 /* @flow */
 
-import type { Login } from './types'
+import type { Login } from './types';
+import update from 'react-addons-update';
 
 type Action = {
   type: string,
   text: string,
 }
 
-const CHANGE_USERNAME = 'CHANGE_USERNAME'
-const CHANGE_PASSWORD = 'CHANGE_PASSWORD'
+const CHANGE_USERNAME = 'LOGIN_CHANGE_USERNAME';
+const CHANGE_PASSWORD = 'LOGIN_CHANGE_PASSWORD';
 
 const initalState = {
     username: '',
@@ -18,9 +19,13 @@ const initalState = {
 export default function login(state: Login = initalState, action: Action): Login {
   switch (action.type) {
     case CHANGE_USERNAME:
-      return state.username = action.text;
+      return state = update(state, {
+        username: {$set: action.text}
+      })
     case CHANGE_PASSWORD:
-      return state.password = action.text;
+      return state = update(state, {
+        password: {$set: action.text}
+      })
     default:
       return state
   }

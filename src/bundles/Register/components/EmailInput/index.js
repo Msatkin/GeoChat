@@ -9,7 +9,7 @@ type Props = {
   value: string
 }
 
-const UsernameInput = (props: Props): React$Element<any> => {
+const EmailInput = (props: Props): React$Element<any> => {
   const update = props.update;
   const value = props.value;
   return (
@@ -23,4 +23,4 @@ const UsernameInput = (props: Props): React$Element<any> => {
     />
   )
 }
-export default UsernameInput
+export default EmailInput

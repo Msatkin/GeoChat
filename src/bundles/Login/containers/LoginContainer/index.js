@@ -23,9 +23,12 @@ type Props = {
 class LoginContainer extends Component {
 
   props: Props;
+  
+  componentWillReceiveProps(nextProps) {
+    console.log('changed')
+  }
 
   render() {
-    console.log(this.props);
     return (
       <View style={styles.main}>
 
@@ -36,11 +39,11 @@ class LoginContainer extends Component {
         <View style={styles.center}>
           <Title>GeoChat</Title>
           <UsernameInput
-            changeUsername={this.props.changeUsername}
+            update={this.props.changeUsername}
             value={this.props.login.username}
           />
           <PasswordInput
-            changePassword={this.props.changePassword}
+            update={this.props.changePassword}
             value={this.props.login.password}
           />
           <SubmitButton/>

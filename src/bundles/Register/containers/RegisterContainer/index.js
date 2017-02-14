@@ -5,9 +5,11 @@ import { View } from 'react-native';
 import connect from './connect';
 import styles from './styles';
 import Title from '@components/Title';
-//import UsernameInput from '@Register/components/UsernameInput';
-//import PasswordInput from '@Register/components/PasswordInput';
-//import SubmitButton from '@Register/components/SubmitButton';
+import EmailInput from '@Register/components/EmailInput';
+import UsernameInput from '@Register/components/UsernameInput';
+import PasswordInput from '@Register/components/PasswordInput';
+import ConfirmPasswordInput from '@Register/components/ConfirmPasswordInput';
+import SubmitButton from '@Register/components/SubmitButton';
 
 type Props = {
   register: {
@@ -36,7 +38,23 @@ class RegisterContainer extends Component {
         </View>
 
         <View style={styles.center}>
-
+          <EmailInput
+            update={this.props.changeEmail}
+            value={this.props.login.email}
+          />
+          <UsernameInput
+            update={this.props.changeUsername}
+            value={this.props.login.username}
+          />
+          <PasswordInput
+            update={this.props.changePassword}
+            value={this.props.login.password}
+          />
+          <ConfirmPasswordInput
+            update={this.props.changeConfirmPassword}
+            value={this.props.login.confirmPassword}
+          />
+          <SubmitButton/>
         </View>
 
         <View style={styles.bottom}>

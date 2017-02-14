@@ -9,18 +9,20 @@ type Props = {
   value: string
 }
 
-const UsernameInput = (props: Props): React$Element<any> => {
-  const update = props.update;
+const ConfirmPasswordInput = (props: Props): React$Element<any> => {
   const value = props.value;
+  const update = props.update;
   return (
     <TextInput
         style={styles.input}
         value={value}
+        secureTextEntry={true}
         onChangeText={(text) => update(text)}
-        placeholder={'Enter Username'}
-        maxLength={18}
+        placeholder={'Enter Password'}
+        maxLength={24}
         multiline={false}
     />
   )
 }
-export default UsernameInput
+
+export default ConfirmPasswordInput

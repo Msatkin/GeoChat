@@ -2,13 +2,13 @@
 
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
-import { changeUsername, changePassword } from '@store/modules/login';
+import { changeUsername, changePassword, setLoginErrors, setLoginApiResponse } from '@store/modules/login';
 
 const mapStateToProps = (state) => ({
   login: state.login,
 })
 
-const mapActionsToProps = { changeUsername, changePassword }
+const mapActionsToProps = { changeUsername, changePassword, setLoginErrors, setLoginApiResponse }
 
 export default (container) => compose(
   connect(

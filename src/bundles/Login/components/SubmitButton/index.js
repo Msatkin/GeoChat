@@ -8,11 +8,8 @@ import { Actions } from 'react-native-router-flux';
 import getHash from '@components/Hash';
 
 const SubmitButton = (props: Props): React$Element<any> => {
-  const username = props.loginInfo.username;
-  const password = props.loginInfo.password;
-  const setApiResponse = props.setApiResponse;
-  const setErrors = props.setErrors;
-  const setPassword = props.setPassword;
+  const username = props.values.login.username;
+  const password = props.values.login.password;
 
   const validate = (username, password) => {
     if (username === '' || password === '') {
@@ -31,13 +28,22 @@ const SubmitButton = (props: Props): React$Element<any> => {
   }
 
   const handleResponse = (response) => {
-    setApiResponse(response.Success, response.Token);
-    if (response.Errors !== null) {
-      setErrors(response.Errors);
-      setPassword('');
-    }
     if (response.Success) {
-      Actions.launch
+      console.log('Login was successful')
+      props.values.setToken(response.Token);
+      props.values.setUser(username);
+      props.values.changeUsername('');
+      props.values.changePassword('');
+      props.values.setErrors([]);
+      Actions.MainContainer();
+    }
+    else {
+      console.log('Login failed')
+      if (response.Errors !== null) {
+        console.log('Errors', response.Errors);
+        props.values.setErrors(response.Errors);
+        props.values.changePassword('');
+      }
     }
   }
 

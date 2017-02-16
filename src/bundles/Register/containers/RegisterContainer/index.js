@@ -10,18 +10,23 @@ import UsernameInput from '@Register/components/UsernameInput';
 import PasswordInput from '@Register/components/PasswordInput';
 import ConfirmPasswordInput from '@Register/components/ConfirmPasswordInput';
 import SubmitButton from '@Register/components/SubmitButton';
+import TextArray from '@components/TextArray';
 
 type Props = {
   register: {
     email: string,
     username: string,
     password: string,
-    confirmPassword: string
+    confirmPassword: string,
+    errors: object,
+    apiCall: object
   },
   changeEmail: Function,
   changeUsername: Function,
   changePassword: Function,
-  changeConfirmPassword: Function
+  changeConfirmPassword: Function,
+  setErrors: Function,
+  setApiResponse: Function
 }
 
 class RegisterContainer extends Component {
@@ -29,7 +34,7 @@ class RegisterContainer extends Component {
   props : Props;
 
   render() {
-    console.log(this.props);
+    const errorList = TextArray(this.props.register.errors, styles.error);
     return (
       <View style={styles.main}>
         <View style={styles.left}></View>
@@ -37,6 +42,9 @@ class RegisterContainer extends Component {
           <View style={styles.main_center}>
             <View style={styles.top}></View>
             <View style={styles.center}>
+              <View style={styles.error_view}>
+                {errorList}
+              </View>
               <EmailInput update={this.props.changeEmail} value={this.props.register.email}/>
               <UsernameInput
                 update={this.props.changeUsername}
@@ -47,7 +55,8 @@ class RegisterContainer extends Component {
               <ConfirmPasswordInput
                 update={this.props.changeConfirmPassword}
                 value={this.props.register.confirmPassword}/>
-              <SubmitButton/>
+              <SubmitButton
+                values={this.props}/>
             </View>
             <View style={styles.bottom}></View>
           </View>

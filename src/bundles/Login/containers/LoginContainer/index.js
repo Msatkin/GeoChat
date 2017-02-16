@@ -9,8 +9,8 @@ import RegisterButton from '@Login/components/RegisterButton';
 import ForgotPasswordButton from '@Login/components/ForgotPasswordButton';
 import connect from './connect';
 import styles from './styles';
-import Title from '@components/Title'
-import TextArray from '@components/TextArray'
+import Title from '@components/Title';
+import TextArray from '@components/TextArray';
 
 type Props = {
   login: {
@@ -29,13 +29,8 @@ class LoginContainer extends Component {
 
   props : Props;
 
-  componentWillReceiveProps(nextProps) {
-    console.log('changed')
-  }
-
   render() {
     const errorList = TextArray(this.props.login.errors, styles.error);
-    console.log(errorList);
     return (
       <View style={styles.main}>
         <View style={styles.left}></View>
@@ -56,10 +51,7 @@ class LoginContainer extends Component {
                 update={this.props.changePassword}
                 value={this.props.login.password}/>
               <SubmitButton
-                loginInfo={this.props.login}
-                setApiResponse={this.props.setLoginApiResponse}
-                setErrors={this.props.setLoginErrors}
-                setPassword={this.props.changePassword}/>
+                values={this.props}/>
             </View>
 
             <View style={styles.bottom}>

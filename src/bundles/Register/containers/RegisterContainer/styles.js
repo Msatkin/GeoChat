@@ -32,6 +32,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
     },
+    error: {
+        color: 'red',
+    },
+    error_view: {
+        alignItems: 'center',
+    }
 })
 
 export default styles

@@ -2,17 +2,19 @@
 
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
-import { changeUsername, changePassword, setLoginErrors, setLoginApiResponse } from '@store/modules/login';
+import { loginFunctions } from '@store/modules/login';
+import { globalActions } from '@store/modules/global';
 
 const mapStateToProps = (state) => ({
+  global: state.global,
   login: state.login,
 })
 
-const mapActionsToProps = { changeUsername, changePassword, setLoginErrors, setLoginApiResponse }
+const mapActionsToProps = Object.assign(loginFunctions, globalActions);
 
 export default (container) => compose(
   connect(
     mapStateToProps,
-    mapActionsToProps,
+    mapActionsToProps
   )
 )(container)

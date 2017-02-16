@@ -5,4 +5,6 @@ export type Register = {
     username: string,
     password: string,
     confirmPassword: string,
+    errors: object,
+    apiCall: object
 }

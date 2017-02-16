@@ -3,7 +3,6 @@
 import React from 'react';
 import { Actions, Scene } from 'react-native-router-flux';
 import { LaunchScene } from '@Launch/scenes';
-import { CounterScene } from '@Counter/scenes';
 import { LoginScene } from '@Login/scenes';
 import { RegisterScene } from '@Register/scenes';
 
@@ -15,7 +14,6 @@ export default Actions.create(
     </Scene>
     <Scene key="MainContainer">
       <Scene key="launch" component={LaunchScene} title="Launch"/>
-      <Scene key="counter" component={CounterScene} title="Counter" />
     </Scene>
   </Scene>
 )

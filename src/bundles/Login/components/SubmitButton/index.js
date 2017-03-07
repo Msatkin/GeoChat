@@ -35,7 +35,7 @@ const SubmitButton = (props: Props): React$Element<any> => {
       props.values.changeUsername('');
       props.values.changePassword('');
       props.values.setErrors([]);
-      Actions.MainContainer();
+      Actions.MessagesContainer();
     }
     else {
       console.log('Login failed')

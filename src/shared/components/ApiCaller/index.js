@@ -9,7 +9,7 @@ export const login = (username, hash, handleResponse) => {
     })
     .then(function (data) {
       var response = JSON.parse(data.request._response);
-      console.log(response);
+      console.log('Success: ' + response.Success);
       handleResponse(response);
     })
     .catch(function (error) {
@@ -25,7 +25,7 @@ export const register = (email, username, hash, handleResponse) => {
     })
     .then(function (data) {
       var response = JSON.parse(data.request._response);
-      console.log(response);
+      console.log('Success: ' + response.Success);
       handleResponse(response);
     })
     .catch(function (error) {

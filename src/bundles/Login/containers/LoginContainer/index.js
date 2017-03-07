@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import UsernameInput from '@Login/components/UsernameInput';
 import PasswordInput from '@Login/components/PasswordInput';
 import SubmitButton from '@Login/components/SubmitButton';
@@ -11,6 +11,8 @@ import connect from './connect';
 import styles from './styles';
 import Title from '@components/Title';
 import TextArray from '@components/TextArray';
+import ForwardButton from '@SceneComponents/ForwardButton';
+import { Actions } from 'react-native-router-flux';
 
 type Props = {
   login: {
@@ -40,7 +42,9 @@ class LoginContainer extends Component {
             <View style={styles.top}></View>
 
             <View style={styles.center}>
-              <Title>GeoChat</Title>
+              <TouchableOpacity onPress={Actions.MessagesContainer}>
+                <Title>GeoChat</Title>
+              </TouchableOpacity>
               <View style={styles.error_view}>
                 {errorList}
               </View>

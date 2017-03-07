@@ -11,14 +11,18 @@ type Action = {
 const SET_TOKEN = 'SET_TOKEN';
 const SET_LOCATION = 'SET_LOCATION';
 const SET_USERNAME = 'SET_GLOBAL_USERNAME';
+const SET_MESSAGES = 'SET_GLOBAL_MESSAGES';
+const SET_WATCHID = 'SET_GLOBAL_WATCHID';
 
 const initalState = {
-    token: '',
+    token: null,
     username: '',
     location: {
       latitude: 0,
       longitude: 0,
-    }
+    },
+    watchID: '',
+    messages: [],
 }
 
 export default function global(state: Global = initalState, action: Action): Global {
@@ -29,11 +33,19 @@ export default function global(state: Global = initalState, action: Action): Glo
       });
     case SET_USERNAME:
       return state = update(state, {
-        token: {$set: action.payload.username}
+        username: {$set: action.payload.username}
       });
     case SET_LOCATION:
       return state = update(state, {
         location: {$set: action.payload}
+      });
+    case SET_MESSAGES:
+      return state = update(state, {
+        messages: {$set: action.payload.messages}
+      });
+    case SET_WATCHID:
+      return state = update(state, {
+        watchID: {$set: action.payload.watchID}
       });
     default:
       return state
@@ -45,17 +57,27 @@ export const setToken = (token): Action => ({
   payload: { token: token }
 })
 
+export const setMessages = (messages): Action => ({
+  type: SET_MESSAGES,
+  payload: { messages: messages }
+})
+
+export const setWatchID = (watchID): Action => ({
+  type: SET_WATCHID,
+  payload: { watchID: watchID }
+})
+
 export const setUser = (username): Action => ({
   type: SET_USERNAME,
   payload: { username: username }
 })
 
-export const setLocation = (latitude, longitude): Action => ({
+export const setLocation = (longitude, latitude): Action => ({
   type: SET_LOCATION,
   payload: {
-      latitude: longitude,
+      latitude: latitude,
       longitude: longitude,
     }
 })
 
-export const globalActions = { setToken, setUser, setLocation };
+export const globalActions = { setToken, setUser, setLocation, setMessages, setWatchID };

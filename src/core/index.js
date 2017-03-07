@@ -11,6 +11,7 @@ const store = createStore()
 const Kernel = (): React$Element<any> => {
   return (
     <Provider store={store}>
+      
       <Router scenes={scenes} />
     </Provider>
   )

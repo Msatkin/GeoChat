@@ -6,6 +6,7 @@ import styles from './styles';
 import { login } from '@components/ApiCaller';
 import { Actions } from 'react-native-router-flux';
 import getHash from '@components/Hash';
+import messageLoader from '@components/MessageLoader';
 
 const SubmitButton = (props: Props): React$Element<any> => {
   const username = props.values.login.username;
@@ -35,6 +36,7 @@ const SubmitButton = (props: Props): React$Element<any> => {
       props.values.changeUsername('');
       props.values.changePassword('');
       props.values.setErrors([]);
+      messageLoader();
       Actions.MessagesContainer();
     }
     else {

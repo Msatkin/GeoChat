@@ -20,7 +20,7 @@ class PostContainer extends Component {
         }
         return (
             <View style={styles.main}>
-                <KeyboardAvoidingView style={styles.main_vertical}>
+                <View style={styles.main_center}>
                     <View style={styles.top}>
                         <Picker
                             style={styles.expiration_delay_picker}
@@ -48,7 +48,7 @@ class PostContainer extends Component {
                                 characters remaining</Text>
                         </View>
                     </View>
-                </KeyboardAvoidingView>
+                </View>
             </View>
         );
     }

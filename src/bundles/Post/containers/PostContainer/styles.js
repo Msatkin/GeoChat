@@ -5,38 +5,38 @@ import { DEFAULT_TEXT_COLOR } from '@theme/colors'
 
 const styles = StyleSheet.create({
     main: {
+        flex: 1,
         flexDirection: 'row',
-        flex: 1,
     },
-    main_center: {
-        flexDirection: 'column',
+    main_vertical: {
         flex: 1,
+        flexDirection: 'column',
+    },
+    expiration_delay_picker: {
+        flex: 1,
+        justifyContent: 'flex-end',
     },
     top: {
         flex: 1,
-        justifyContent: 'flex-start',
-    },
-    center: {
-        flex: 3,
-        justifyContent: 'center',
+        backgroundColor: '#ff0000',
+        justifyContent: 'flex-end',
     },
     bottom: {
-        flex: 1,
+        flex: 3,
+        backgroundColor: '#00ff00',
         justifyContent: 'flex-end',
     },
-    left: {
-        flex: 1,
-        justifyContent: 'flex-start',
+    blue_text: {
+        color: '#2d80cf'
     },
-    right: {
-        flex: 1,
-        justifyContent: 'flex-end',
+    red_text: {
+        color: '#FF4C4C'
     },
-    error: {
-        color: 'red',
+    text_entry_view: {
+        marginBottom: 15,
     },
-    error_view: {
-        alignItems: 'center',
+    message_entry: {
+        
     }
 })
 

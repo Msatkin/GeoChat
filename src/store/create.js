@@ -15,6 +15,7 @@ const enhancer = composeEnhancers(
     promiseMiddleware
   ),
 )
+export let Store = null;
 
 export default function configureStore(initialState) {
   console.log('creating store');
@@ -23,6 +24,7 @@ export default function configureStore(initialState) {
     initialState,
     enhancer
   )
-  GeoLocation(store);
+  Store = store;
+  GeoLocation();
   return store
 }
